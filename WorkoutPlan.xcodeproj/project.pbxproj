@@ -87,6 +87,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		310A9AAD24DA34A8002E854B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		315971A024DA22F900D63172 = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +113,9 @@
 		315971AB24DA22F900D63172 /* WorkoutPlan */ = {
 			isa = PBXGroup;
 			children = (
-				310A9AA824DA2BA1002E854B /* Modifiers */,
 				315971C024DA231300D63172 /* Models */,
+				310A9AAD24DA34A8002E854B /* Services */,
+				310A9AA824DA2BA1002E854B /* Modifiers */,
 				310A9AAB24DA2DC3002E854B /* Components */,
 				315971C124DA231C00D63172 /* Views */,
 				315971AC24DA22F900D63172 /* AppDelegate.swift */,

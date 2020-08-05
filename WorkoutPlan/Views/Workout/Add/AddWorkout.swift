@@ -9,32 +9,44 @@
 import SwiftUI
 
 struct AddWorkout: View {
+    @ObservedObject var store: WorkoutStore
+    @Binding var isPresented: Bool
+    
+    func addWorkout() {
+        store.workouts.append(Workout(title: "Test"))
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             Text("Add a workout")
+                .font(.title)
             
             Spacer()
             
             VStack(spacing: 30) {
-                Button(action: {print("Add More Workout")}) {
+                Button(action: { self.addWorkout() }) {
                     Text("Add More Workout")
                         .foregroundColor(.white)
                 }
                 .modifier(ButtonModifier())
                 
-                Button(action: {print("Add Workout & Leave")}) {
+                Button(action: {
+                    self.addWorkout()
+                    self.isPresented = false
+                }) {
                     Text("Add Workout & Leave")
                         .foregroundColor(.white)
                 }
                 .modifier(ButtonModifier())
             }
             .frame(maxWidth: .infinity)
+            .offset(y: -30)
         }
     }
 }
 
 struct AddWorkout_Previews: PreviewProvider {
     static var previews: some View {
-        AddWorkout()
+        AddWorkout(store: WorkoutStore(), isPresented: .constant(true))
     }
 }

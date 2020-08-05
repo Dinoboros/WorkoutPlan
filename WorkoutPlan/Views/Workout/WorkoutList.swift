@@ -31,7 +31,7 @@ struct WorkoutList: View {
             .navigationBarItems(trailing: Button(action: { self.showAddWorkout.toggle() }) {
                 Text("Add workout")
             }.sheet(isPresented: $showAddWorkout) {
-                AddWorkout()
+                AddWorkout(store: self.store, isPresented: self.$showAddWorkout)
             })
         }
     }
