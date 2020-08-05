@@ -12,11 +12,6 @@ struct WorkoutList: View {
     @ObservedObject var store = WorkoutStore()
     
     @State var showAddWorkout = false
-//    @Binding var showList: Bool
-    
-    func addWorkout() {
-        store.workouts.append(Workout(title: "Nouvelle séance"))
-    }
     
     var body: some View {
         NavigationView {
