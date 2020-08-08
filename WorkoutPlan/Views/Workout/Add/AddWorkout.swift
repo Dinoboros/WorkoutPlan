@@ -19,34 +19,42 @@ struct AddWorkout: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Add a workout")
-                .font(.title)
-            
-            Spacer()
-            
-            Form {
-                TextField("Workout title", text: $workoutTitle)
-            }
-            
-            VStack(spacing: 30) {
-                Button(action: { self.addWorkout() }) {
-                    Text("Add More Workout")
-                        .foregroundColor(.white)
+        ZStack {
+           NavigationView {
+                Form {
+                    TextField("Workout title", text: $workoutTitle)
+                    
+                    Section {
+                        Button(action: {
+                            self.addWorkout()
+                            self.isPresented = false
+                        }) {
+                            Text("Add Workout")
+                                .foregroundColor(.white)
+                        }
+                        .modifier(ButtonModifier())
+                    }
                 }
-                .modifier(ButtonModifier())
+                .navigationBarTitle("Add workout")
+            }
                 
-                Button(action: {
-                    self.addWorkout()
-                    self.isPresented = false
-                }) {
-                    Text("Add Workout & Leave")
-                        .foregroundColor(.white)
-                }
-                .modifier(ButtonModifier())
-            }
-            .frame(maxWidth: .infinity)
-            .offset(y: -30)
+//            VStack(spacing: 30) {
+//                Button(action: { self.addWorkout() }) {
+//                    Text("Add More Workout")
+//                        .foregroundColor(.white)
+//                }
+//                .modifier(ButtonModifier())
+
+//                Button(action: {
+//                    self.addWorkout()
+//                    self.isPresented = false
+//                }) {
+//                    Text("Add Workout & Leave")
+//                        .foregroundColor(.white)
+//                }
+//                .modifier(ButtonModifier())
+//            }
+//            .frame(maxWidth: .infinity)
         }
     }
 }
