@@ -16,8 +16,8 @@ struct WorkoutList: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(store.workouts) { workout in
-                    NavigationLink(destination: WorkoutDetail()) {
+                ForEach(store.workouts, id: \.id) { workout in
+                    NavigationLink(destination: WorkoutDetail(workout: workout)) {
                         HStack {
                             Image(systemName: "pencil.slash")
                             Text(workout.title)

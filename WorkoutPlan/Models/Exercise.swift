@@ -12,9 +12,10 @@ import Combine
 struct Exercise: Identifiable {
     var id = UUID()
     var title: String
+    var series: String
+    var reps: String
 }
 
-
 class ExerciseStore: ObservableObject {
-    @Published var exercise: [Exercise] = []
+    @Published var exercises: [Exercise] = []
 }

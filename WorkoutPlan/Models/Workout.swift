@@ -12,7 +12,7 @@ import Combine
 struct Workout: Identifiable {
     var id = UUID()
     var title: String
-    var exercise: [Exercise]?
+    var exercise: ExerciseStore
 }
 
 class WorkoutStore: ObservableObject {

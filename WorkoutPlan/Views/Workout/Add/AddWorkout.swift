@@ -15,7 +15,7 @@ struct AddWorkout: View {
     @State private var workoutTitle: String = ""
     
     func addWorkout() {
-        store.workouts.append(Workout(title: workoutTitle))
+        store.workouts.append(Workout(title: workoutTitle, exercise: ExerciseStore()))
     }
     
     var body: some View {
@@ -37,24 +37,6 @@ struct AddWorkout: View {
                 }
                 .navigationBarTitle("Add workout")
             }
-                
-//            VStack(spacing: 30) {
-//                Button(action: { self.addWorkout() }) {
-//                    Text("Add More Workout")
-//                        .foregroundColor(.white)
-//                }
-//                .modifier(ButtonModifier())
-
-//                Button(action: {
-//                    self.addWorkout()
-//                    self.isPresented = false
-//                }) {
-//                    Text("Add Workout & Leave")
-//                        .foregroundColor(.white)
-//                }
-//                .modifier(ButtonModifier())
-//            }
-//            .frame(maxWidth: .infinity)
         }
     }
 }
