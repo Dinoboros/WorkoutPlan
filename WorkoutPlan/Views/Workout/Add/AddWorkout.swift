@@ -12,8 +12,10 @@ struct AddWorkout: View {
     @ObservedObject var store: WorkoutStore
     @Binding var isPresented: Bool
     
+    @State private var workoutTitle: String = ""
+    
     func addWorkout() {
-        store.workouts.append(Workout(title: "Test"))
+        store.workouts.append(Workout(title: workoutTitle))
     }
     
     var body: some View {
@@ -22,6 +24,10 @@ struct AddWorkout: View {
                 .font(.title)
             
             Spacer()
+            
+            Form {
+                TextField("Workout title", text: $workoutTitle)
+            }
             
             VStack(spacing: 30) {
                 Button(action: { self.addWorkout() }) {

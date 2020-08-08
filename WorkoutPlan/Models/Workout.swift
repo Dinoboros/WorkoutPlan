@@ -14,12 +14,6 @@ struct Workout: Identifiable {
     var title: String
 }
 
-let workoutData: [Workout] = [
-    Workout(title: "Haut du corps"),
-    Workout(title: "Bas du corps"),
-    Workout(title: "Cardio")
-]
-
 class WorkoutStore: ObservableObject {
-    @Published var workouts: [Workout] = workoutData
+    @Published var workouts: [Workout] = []
 }

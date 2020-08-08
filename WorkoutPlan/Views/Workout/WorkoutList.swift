@@ -27,7 +27,7 @@ struct WorkoutList: View {
                     self.store.workouts.remove(at: index.first!)
                 }
             }
-            .navigationBarTitle(Text("Workout"))
+            .navigationBarTitle(Text("Workouts"))
             .navigationBarItems(trailing: Button(action: { self.showAddWorkout.toggle() }) {
                 Text("Add workout")
             }.sheet(isPresented: $showAddWorkout) {
