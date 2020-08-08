@@ -17,7 +17,7 @@ struct WorkoutDetail: View {
             ForEach(workout.exercise.exercises) { exercise in
                 VStack(alignment: .leading) {
                     Text(exercise.title)
-                    Text("\(exercise.series) x \(exercise.reps)")
+                    Text("\(exercise.series) sets of \(exercise.reps) reps")
                         .font(.caption)
                 }
             }
